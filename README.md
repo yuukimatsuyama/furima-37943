@@ -10,7 +10,8 @@
 | encrypted_password | string  | null: false               |
 | family_name        | string  | null: false               |
 | personal_name      | string  | null: false               |
-| kana               | string  | null: false               |
+| kana_family        | string  | null: false               |
+| kana_personal      | string  | null: false               |
 | birthday           | date    | null: false               |
 
 ### Association
