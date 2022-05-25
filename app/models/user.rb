@@ -19,4 +19,6 @@ class User < ApplicationRecord
     validates :password,length:{minimum:6},format:{with: VALID_PASSWORD_REGEX}
   end
 
+  has_many :items
+
 end
