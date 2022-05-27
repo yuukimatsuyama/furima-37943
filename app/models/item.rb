@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+<<<<<<< Updated upstream
   belongs_to :user
   has_one_attached :image
   has_one :buying_items
@@ -24,3 +25,6 @@ class Item < ApplicationRecord
   end
 end
 
+=======
+end
+>>>>>>> Stashed changes
