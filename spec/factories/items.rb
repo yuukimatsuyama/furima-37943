@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :item do
-<<<<<<< Updated upstream
     item_name               {'テスト'}
     content                 {'テスト'}
     category_id             {1}
@@ -15,8 +14,5 @@ FactoryBot.define do
     after(:build) do |item|
       item.image.attach(io: File.open('public/image/test_image.png'), filename: 'test_image.png')
     end
-=======
-    
->>>>>>> Stashed changes
   end
 end
