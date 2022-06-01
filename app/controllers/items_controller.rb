@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :basic_auth
   before_action :authenticate_user!,only: [:new,:edit,:destroy]
   before_action :set_item,only: [:show,:edit,:update]
+  before_action :move_to_top ,only: [:edit]
 
   def new
     @item = Item.new
@@ -62,4 +63,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def move_to_top
+    if @item.buying_item.present?
+      redirect_to root_path
+    end
+  end
 end
