@@ -43,7 +43,12 @@ RSpec.describe BuyingItemShipping, type: :model do
       @buying_item_shipping.valid?
       expect(@buying_item_shipping.errors.full_messages).to include("Phone number can't be blank")
     end
-      it 'address_numberは半角数字でなければならない' do
+    it 'tokenが空では登録できない' do
+      @buying_item_shipping.token = ''
+      @buying_item_shipping.valid?
+      expect(@buying_item_shipping.errors.full_messages).to include("Token can't be blank")
+    end
+    it 'address_numberは半角数字でなければならない' do
       @buying_item_shipping.address_number = '０００-００００'
       @buying_item_shipping.valid?
       expect(@buying_item_shipping.errors.full_messages).to include("Address number is invalid")
