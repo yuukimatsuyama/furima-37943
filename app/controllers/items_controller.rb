@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :basic_auth
   before_action :authenticate_user!,only: [:new,:edit,:destroy]
   before_action :set_item,only: [:show,:edit,:update]
+  before_action :move_to_top ,only: [:edit]
 
   def new
     @item = Item.new
@@ -55,11 +56,16 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:item_name,:content,:category_id,:product_status_id,:delivery_charge_id,:prefecture_id,:shipping_days_id,:item_name,:image,:price).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name,:content,:category_id,:product_status_id,:delivery_charge_id,:prefecture_id,:shipping_days_id,:image,:price).merge(user_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
 
+  def move_to_top
+    if @item.buying_item.present?
+      redirect_to root_path
+    end
+  end
 end
