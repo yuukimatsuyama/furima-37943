@@ -1,7 +1,7 @@
 class BuyingItemShipping
 
 include ActiveModel::Model
-attr_accessor :user_id,:item_id,:address_number,:prefecture_id,:municipality,:address,:building_name,:phone_number,:buying_item_id,:token
+attr_accessor :user_id,:item_id,:address_number,:prefecture_id,:municipality,:address,:building_name,:phone_number,:token
 
 with_options presence: true do
   validates :address_number ,format: {with:/\A\d{3}[-]\d{4}\z/}
