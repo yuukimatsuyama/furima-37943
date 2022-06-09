@@ -6,8 +6,8 @@ class Category < ActiveHash::Base
     {id: 3 , name: 'ベビー・キッズ'},
     {id: 4 , name: 'インテリア・住まい・小物'},
     {id: 5 , name: '本・音楽・ゲーム'},
-    {id: 6 , name: 'おもちゃ・ホビーグッズ'},
-    {id: 7 , name: '家事・スマホ。カメラ'},
+    {id: 6 , name: 'おもちゃ・ホビー・グッズ'},
+    {id: 7 , name: '家事・スマホ・カメラ'},
     {id: 8 , name: 'スポーツ・レジャー'},
     {id: 9 , name: 'ハンドメイド'},
     {id: 10 , name: 'その他'}
